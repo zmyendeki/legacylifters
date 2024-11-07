@@ -1,0 +1,130 @@
+.booking-form {
+    max-width: 450px;
+    margin: auto;
+    padding: 25px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8em;
+    color: #008080; 
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.web-name {
+    font-family: 'Lobster', cursive; 
+    font-size: 3em;
+    font-weight: normal; 
+    margin: 0;
+    color: #008080; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: #008080;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: #006666;
+}
+
+button:disabled {
+    background-color: #d3d3d3;
+    cursor: not-allowed;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+    background-color: #f9f9f9; 
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #008080;
+    outline: none;
+    background-color: #fff;
+}
+
+.booking-form div {
+    margin-bottom: 20px;
+}
+
+.option-button {
+    display: block;
+    width: 120px; 
+    margin: 8px auto; 
+    padding: 8px;
+    font-size: 14px;
+    background-color: #008080;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.option-button:hover {
+    background-color: #006666;
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #008080;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
