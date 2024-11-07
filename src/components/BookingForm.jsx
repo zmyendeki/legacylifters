@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaTiktok, FaWhatsapp, FaYoutube, FaChevronUp, FaChevronDown, FaRectangleXmark } from 'react-icons/fa6'
 import emailjs from '@emailjs/browser';
 import './BookingForm.css';
+import Head from './Head';
 
 const BookingForm = () => {
     const navigate = useNavigate();
@@ -119,6 +120,8 @@ const BookingForm = () => {
     };
 
     return (
+        <>
+        <Head />
         <div className="landing-page">
             <div className="header">
                 <h1 className="website-name">
@@ -294,6 +297,7 @@ const BookingForm = () => {
                 </div>
             </footer>
         </div>
+        </>
     );
 };
 
