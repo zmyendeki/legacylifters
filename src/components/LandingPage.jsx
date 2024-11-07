@@ -7,7 +7,6 @@ import DigitalMastery from "../assets/digitalmastery.png";
 import LegacyBuilder from "../assets/legacybuilder.png";
 import PassivePay from "../assets/passsivepay.png";
 import emailjs from '@emailjs/browser';
-import Head from './Head';
 
 const faqs = [
     {
@@ -188,7 +187,6 @@ const LandingPage = () => {
 
     return (
         <div className="landing-page">
-             <Head />
             <div className="header">
                 <h1 className="website-name">
                     <span className="legacy">Legacy</span>
