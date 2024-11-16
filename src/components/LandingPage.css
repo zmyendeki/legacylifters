@@ -624,6 +624,25 @@ body {
     justify-content: center;
 }
 
+.outer-container1 {
+    background-color: white;
+    margin-bottom: 40px;
+    padding: 20px;
+    display: flex;
+    width: 65%;
+    justify-content: center;
+}
+
+.content-container1 {
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .outer-container1 {
+        display: none !important;
+    }
+}
+
 .side-container {
     background-color: white; 
     padding: 20px;
@@ -677,6 +696,18 @@ a {
         width: 100%;
         padding: 10px;
         margin-bottom: 20px;
+    }
+
+    .outer-container1 {
+        background-color: white;
+        margin-bottom: 20px;
+        padding: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .content-container1 {
+        width: 100%;
     }
 
     .side-container {

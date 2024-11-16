@@ -493,6 +493,46 @@ const LandingPage = () => {
                 </div>
             </div>
 
+            <div className="outer-container1" style={{ display: 'flex' }}>
+                <div className="content-container1">
+                    <div className="search-section">
+                        <h3>Search Content</h3>
+                        <div className="search-contact-container">
+                            <div className="search-container">
+                                <input
+                                    type="text"
+                                    className="search-input"
+                                    placeholder="Search..."
+                                    value={searchQuery}
+                                    onChange={(e) => handleSearch(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            handleSearch(searchQuery);
+                                        }
+                                    }}
+                                />
+                                <FaSearchengin className="search-icon" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="resources-section">
+                        <h3>Additional Information about The Legacy Builders Program</h3>
+                        <p>Access exclusive information to enhance your digital marketing journey.</p>
+                        <ul>
+                            <Link to="/mrr">Master Resale Rights</Link>
+                            <br /><br />
+                            <Link to="/lbplegit">Is the Legacy Builders Program a Scam?</Link>
+                            <br /><br />
+                            <Link to="/earn">How to Earn in Dollars This Festive Season</Link>
+                        </ul>
+                    </div>
+                    <p><b>...</b></p>
+                    <p style={{ textAlign: "justify", fontStyle: "italic", color: "#6c757d" }}>
+                        <b>Disclaimer</b>: As a participant in the Legacy Builders Program, I may earn a commission from sales made through the program. My goal is to provide an honest and transparent perspective based on my personal experiences and understanding of how the program works. If you're interested in exploring opportunities for building a sustainable online income, the Legacy Builder Program could provide the tools you need. Click here for more details.
+                    </p>
+                </div>
+            </div>
+
             <div className="outer-container">
                 <div className="content-container">
                     <div className="faq-section">
@@ -513,7 +553,6 @@ const LandingPage = () => {
                     </div>
                 </div>
             </div>
-
 
             <div className="outer-container">
                 <div className="content-container">
