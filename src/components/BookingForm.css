@@ -94,11 +94,22 @@ input:focus {
     margin-bottom: 20px;
 }
 
+div {
+    text-align: center;
+}
+
+button.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .option-button {
-    display: block;
-    width: 120px; 
+    display: inline-flex; 
+    justify-content: center;
+    align-items: center; 
     margin: 8px auto; 
-    padding: 8px;
+    padding: 0 8px; 
     font-size: 14px;
     background-color: #008080;
     color: white;
@@ -107,6 +118,22 @@ input:focus {
     cursor: pointer;
     transition: background-color 0.3s ease;
     text-align: center;
+    position: relative;
+    width: 120px; 
+    height: 50px; 
+}
+
+.option-strikethrough .main-amount {
+    text-decoration: line-through;
+}
+
+.strikethrough-text {
+    color: white;
+    font-size: 12px;
+    margin-left: 5px;
+    text-decoration: none;
+    display: inline;
+    width: auto; 
 }
 
 .option-button:hover {

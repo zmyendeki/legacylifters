@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './LandingPage.css';
-import { FaSearchengin, FaRectangleXmark, FaTiktok, FaWhatsapp, FaChevronDown, FaChevronUp, FaYoutube } from 'react-icons/fa6';
+import { FaSearchengin, FaRectangleXmark, FaTiktok, FaWhatsapp, FaChevronDown, FaChevronUp, FaYoutube, FaRegMessage } from 'react-icons/fa6';
 import LaunchPad from "../assets/launchpad.png";
 import DigitalMastery from "../assets/digitalmastery.png";
 import LegacyBuilder from "../assets/legacybuilder.png";
 import PassivePay from "../assets/passsivepay.png";
+import AllIncomeStreams from "../assets/allincomestreams.jpg"
+import Profile from "../assets/profile.jpeg"
 import emailjs from '@emailjs/browser';
 
 const faqs = [
@@ -122,7 +124,7 @@ const LandingPage = () => {
         const endpoint = isSignUp ? '/signup' : '/signin';
 
         try {
-            const response = await fetch(`http://localhost:5000/api${endpoint}`, {
+            const response = await fetch(`http://localhost:5001/api${endpoint}`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData),
@@ -285,60 +287,163 @@ const LandingPage = () => {
                 </div>
             )}
 
-            <div class="wrapper">
+            <div className="new-section">
+                <img src={Profile} alt="Zandile Myendekim" className="profile-picture" />
+                <div className="profile-details">
+                    <div className="profile-header">
+                        <p className="profile-name">Written by Zandile Myendeki</p>
+                        <div className="action-buttons">
+                            <a href="https://www.tiktok.com/@zee.digital.hub" target="_blank" rel="noopener noreferrer">
+                                <button className="follow-button">Follow</button>
+                            </a>
+                            <a href="https://wa.me/0633362141" target="_blank" rel="noopener noreferrer">
+                                <button className="message-button">
+                                    <FaRegMessage />
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                    <p className="profile-description">
+                    Helping individuals attain financial independence through digital marketing and education. Founder of
+                        <a href="https://www.zeedigitalhub.com/" target="_blank" rel="noopener noreferrer"> zeedigitalhub.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div className="wrapper">
                 <div className="outer-container">
                     <div className="content-container">
-
-
                         <div className="intro-section">
                             <h2>Welcome to The Legacy Builder Program</h2>
                             <p>
-                                Introducing The Legacy Builder Program, brought to you by The Digital Growth Community. Discover the Premier Online Business Community that offers a systematic 6 Figure Blueprint, step-by-step approach to achieving automated daily earnings of $900 (approximately R16,800) per sale!. <b>The Legacy Builder Program</b> is a comprehensive coaching, training, and mentorship program designed to teach digital marketing, social media marketing, and personal branding. Through this program, you’ll gain the skills to build a personal brand, monetize social media, and effectively drive revenue online.
+                                Introducing The Legacy Builder Program, brought to you by The Digital Growth Community. Discover the Premier Online Business Community that offers a systematic 6 Figure Blueprint, step-by-step approach to achieving automated daily earnings of $900 (approximately R16,800) per sale. <b>The Legacy Builder Program</b> is a comprehensive coaching, training, and mentorship program designed to teach digital marketing, social media marketing, and personal branding. Through this program, you will gain the skills to build a personal brand, monetize social media, and effectively drive revenue online.
                                 <br /><br />
-                                Upon joining, you’ll receive a fully automated online business setup, including a website, sales funnel, and email marketing system, all ready for immediate use. The program features four unique income streams at levels of $100, $300, $600, and $900, offering 100% profit on each sale. With just two hours of daily engagement—posting content to generate awareness—your website handles sales and transactions seamlessly, allowing you to focus on expanding your business while enjoying automated earnings. Scroll down to the Q&A section for important information before joining. When you're ready to purchase, click the button below to receive email marketing insights.
+                                Upon joining, you will receive a fully automated online business setup, including a website, sales funnel, and email marketing system, all ready for immediate use. The program features four unique income streams at levels of $100, $300, $600, and $900, offering 100% profit on each sale. With just two hours of daily engagement—posting content to generate awareness — your website handles sales and transactions seamlessly, allowing you to focus on expanding your business while enjoying automated earnings. Scroll down to the Q&A section for important information before joining. When you are ready to purchase, click the <b>Get Started with the Legacy Builders Program</b> button below and receive email marketing insights.
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="side-container">
-                    <h3>Search Content</h3>
-                    <div className="search-contact-container">
-                        <div className="search-container">
-                            <input
-                                type="text"
-                                className="search-input"
-                                placeholder="Search..."
-                                value={searchQuery}
-                                onChange={(e) => handleSearch(e.target.value)}
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter') {
-                                        handleSearch(searchQuery);
-                                    }
-                                }}
-                            />
-                            <FaSearchengin className="search-icon" />
+
+                <div className="side-container">
+                    <div className="search-section">
+                        <h3>Search Content</h3>
+                        <div className="search-contact-container">
+                            <div className="search-container">
+                                <input
+                                    type="text"
+                                    className="search-input"
+                                    placeholder="Search..."
+                                    value={searchQuery}
+                                    onChange={(e) => handleSearch(e.target.value)}
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            handleSearch(searchQuery);
+                                        }
+                                    }}
+                                />
+                                <FaSearchengin className="search-icon" />
+                            </div>
                         </div>
                     </div>
+                    <div className="resources-section">
+                        <h3>Additional Information about The Legacy Builders Program</h3>
+                        <p>Access exclusive information to enhance your digital marketing journey.</p>
+                        <ul>
+                            <Link to="/mrr">Master Resale Rights</Link>
+                            <br /><br />
+                            <Link to="/lbplegit">Is the Legacy Builders Program a Scam?</Link>
+                            <br /><br />
+                            <Link to="/earn">How to Earn in Dollars This Festive Season</Link>
+                        </ul>
+                    </div>
+                    <p><b>...</b></p>
+                    <p style={{ textAlign: "justify", fontStyle: "italic", color: "#6c757d" }}>
+                        <b>Disclaimer</b>: As a participant in the Legacy Builders Program, I may earn a commission from sales made through the program. My goal is to provide an honest and transparent perspective based on my personal experiences and understanding of how the program works. If you're interested in exploring opportunities for building a sustainable online income, the Legacy Builder Program could provide the tools you need. Click here for more details.
+                    </p>
+                </div>
+            </div>
+
+            <div className="outer-container">
+                <div className="content-container" style={{ textAlign: "justify" }}>
+                    <h2>What Is the Legacy Builders Program?</h2>
+                    <p>The Legacy Builders Program is an online coaching and training platform focused on digital marketing. It teaches participants how to navigate social media marketing, with strategies tailored for platforms like TikTok, Instagram, YouTube, Facebook, and Pinterest. A key aspect of the program is its guidance on building and managing anonymous or “faceless” social media accounts, enabling users to drive traffic, grow their business, and achieve sales without showing their faces. Additionally, the program provides insights on posting free ads to promote the Legacy Builders Program or other affiliate programs, empowering participants to market effectively without spending on advertising.</p>
+
+                    <h2>Understanding How the Legacy Builders Program Works</h2>
+                    <p>Participants can choose from four levels, each offering different training and resources. Each level allows users to resell the purchased program and lower levels for 100% commissions:</p>
+
+                    <ul>
+                        <li><strong>The Launchpad ($100):</strong> Entry-level program covering digital marketing basics like setting up an online presence, creating engaging content, and using foundational marketing techniques. After purchasing, users can sell The Launchpad for $100 and keep all earnings.</li>
+                        <li><strong>Passive Daily Pay Blueprint ($300):</strong> Builds on The Launchpad, teaching strategies for creating a steady, passive income through digital marketing. Covers automated sales funnels, content creation, affiliate marketing, and social media engagement. Users earn 100% commission on each $100 and $300 sale.</li>
+                        <li><strong>Digital Mastery ($600):</strong> Expands on Passive Daily Pay Blueprint with advanced techniques in social media marketing, sales funnels, email automation, and branding. Purchasing Digital Mastery allows users to sell this program and lower levels, earning 100% commission on each $100, $300, and $600 sale.</li>
+                        <li><strong>Legacy Builders Program ($900):</strong> The highest level, providing in-depth training and exclusive resources to maximize income potential. Buying this program enables users to resell all four levels — The Launchpad($100), Passive Daily Pay Blueprint($300), Digital Mastery($600), and Legacy Builders Program($900) — retaining 100% of sales profits.</li>
+                    </ul>
+
+                    <img src={AllIncomeStreams} alt="All Income Streams" className="income-stream-image" />
+
+                    <h2>Legacy Builders Program Business Model</h2>
+                    <p>The Legacy Builders Program operates on a business model that combines digital marketing training with affiliate reselling. Participants purchase access to various training levels, each with progressively advanced content and marketing tools. Once a product is purchased, users gain resale rights for that specific product, enabling them to earn 100% commissions by reselling the program to others. This model encourages participants to both learn and apply the digital marketing strategies offered and promote and resell the program itself.</p>
+
+                    <h2>Legacy Builders Program: Summary Highlights</h2>
+                    <ul>
+                        <li><strong>Core Focus:</strong> Digital marketing education and mentorship.</li>
+                        <li><strong>Key Platforms:</strong> Specializes in social media marketing strategies for TikTok, Instagram, YouTube, Facebook, and Pinterest.</li>
+                        <li><strong>Training Content:</strong> Provides lessons on managing both personal and anonymous social media profiles.</li>
+                        <li><strong>Advertising Strategy:</strong> Offers guidance on leveraging free advertising to promote the Legacy Builders Program.</li>
+                        <li><strong>Master Resale Rights (MRR):</strong> In-depth training on the benefits and applications of Master Resale Rights.</li>
+                        <li><strong>Program Levels:</strong> Available in $100, $300, $600, and $900 tiers, each with its own resale rights.</li>
+                        <li><strong>Marketing Features:</strong> Includes an automated online marketing system with customizable lead capture pages and automated email follow-ups.</li>
+                        <li><strong>Earnings Potential:</strong> Allows participants to earn 100% commissions on resold products, creating substantial income opportunities.</li>
+                    </ul>
+
+                    <h2>Advantages of the Legacy Builders Program</h2>
+                    <ul>
+                        <li><strong>Comprehensive Training:</strong> Provides in-depth guidance on various digital marketing techniques.</li>
+                        <li><strong>Resale Rights:</strong> Grants participants the opportunity to earn 100% commissions by reselling the program.</li>
+                        <li><strong>Marketing Tools:</strong> Offers a complete marketing system with a customizable squeeze page and automated email follow-ups.</li>
+                        <li><strong>Free Ad Posting:</strong> Teaches users how to use free ad platforms to promote affiliate programs.</li>
+                        <li><strong>Step-by-Step Guidance:</strong> Structured training for all levels of experience.</li>
+                        <li><strong>No MLM or Pyramid Scheme:</strong> Direct sales model with no upline, downline, or other network marketing structures. Earnings are directly from personal sales.</li>
+                        <li><strong>Low Setup Fee:</strong> A one-time admin fee of $29.00 is required in addition to purchasing the chosen program.</li>
+                        <li><strong>No Monthly Fees:</strong> There are no monthly, hosting, or support fees.</li>
+                        <li><strong>No Face-to-Face Selling:</strong> The sales process is automated, and customers are directed to your website.</li>
+                        <li><strong>Robust Customer Support:</strong> Quick, responsive support via email for customers with questions.</li>
+                        <li><strong>Strong Community:</strong> The platform hosts a vibrant community with over 30k members who support each other and celebrate successes.</li>
+                        <li><strong>Additional Training:</strong> Access to extra resources and training videos in the Skool platform’s classroom.</li>
+                        <li><strong>Calendar of Events:</strong> Offers specialty trainings, tech support, and webinars that can be used to attract new prospects.</li>
+                        <li><strong>Income Potential:</strong> With products ranging from $100 to $900, the program offers significant earnings, with many users reporting substantial income.</li>
+                    </ul>
+                    <h2>Disadvantages of the Legacy Builders Program</h2>
+                    <ul>
+                        <li><strong>Sales-Focused Approach:</strong> The program is centered around reselling. If you don't drive traffic to your website, you won’t make any sales. It requires consistent effort to succeed.</li>
+                        <li><strong>Tax Responsibility:</strong> Payments are made directly to participants without tax deductions. It’s up to you to handle your taxes.</li>
+                        <li><strong>Unrealistic Promises:</strong> Many online testimonials boast of high earnings, which may create the expectation of quick financial success. While large profits are achievable, they depend on how much effort you invest, and success is not guaranteed.</li>
+                    </ul>
+                    <h2>Evaluating the Legacy Builders Program</h2>
+                    <p>
+                        The Legacy Builders Program is a credible platform that delivers extensive training on digital marketing strategies, particularly for social media platforms. It provides users with valuable skills like free ad posting, social media engagement, and Master Resale Rights — all useful for digital marketers aiming to grow their online presence. Unlike multi-level or pyramid schemes, the program emphasizes individual sales rather than network marketing structures, making it a straightforward opportunity to earn commissions. With its actionable guidance and robust marketing tools, the Legacy Builders Program serves as a practical choice for those looking to improve digital marketing skills while also offering the potential for commission-based income through its resale rights model.
+                    </p>
+                    <p>If you are interested in exploring this opportunity further, I encourage you to click the <b>Get Started with the Legacy Builders Program</b> button below to learn more and begin your journey with the Legacy Builders Program.</p>
+
                 </div>
             </div>
 
             <div className="outer-container">
                 <div className="content-container">
                     <a href="https://www.zeedigitalhub.com/" target="_blank" rel="noopener noreferrer">
-                        <button className="getstarted-button">Get Started with The Legacy Builder Program</button>
+                        <button className="getstarted-button">Get Started with The Legacy Builders Program</button>
                     </a>
 
                     <div className="income-streams">
-                        <h2>Four Income Streams Offered by The Legacy Builder Program</h2>
+                        <h2>Four Income Streams Offered by The Legacy Builders Program</h2>
                         <h4>Choose the course that best suits your needs below. You can upgrade to a higher income stream course at any time.</h4>
                         <div className="income-stream-cards">
                             <div className="income-stream">
                                 <img src={LaunchPad} alt="Launch Pad" className="income-stream-image" />
-                                <h3>Launch Pad</h3>
+                                <h3>Launchpad</h3>
                                 <h1>$100 USD</h1>
                                 <h4>Get full resell right to $100</h4>
                                 <p>
-                                The Launch Pad course builds foundational skills for starting an online business, covering resale rights and key marketing strategies. With a two-hour daily workflow, it helps members make their first sales quickly.
+                                    The Launch Pad course builds foundational skills for starting an online business, covering resale rights and key marketing strategies. With a two-hour daily workflow, it helps members make their first sales quickly.
                                 </p>
                                 <a href="https://www.zeedigitalhub.com/100launchpad" target="_blank" rel="noopener noreferrer">
                                     <button className="watch-button">Buy $100</button>
@@ -351,7 +456,7 @@ const LandingPage = () => {
                                 <h1>$300 USD</h1>
                                 <h4>Get full resell right to $100 and $300</h4>
                                 <p>
-                                The Passive Daily Pay Blueprint focuses on affiliate marketing, guiding participants to build a personal brand, engage profitably on social media, and create consistent, passive income through authentic audience connections.
+                                    The Passive Daily Pay Blueprint focuses on affiliate marketing, guiding participants to build a personal brand, engage profitably on social media, and create consistent, passive income through authentic audience connections.
                                 </p>
                                 <a href="https://www.zeedigitalhub.com/300blueprint" target="_blank" rel="noopener noreferrer">
                                     <button className="watch-button">Buy $300</button>
@@ -373,7 +478,7 @@ const LandingPage = () => {
 
                             <div className="income-stream">
                                 <img src={LegacyBuilder} alt="Complete Legacy Builder Program" className="income-stream-image" />
-                                <h3>Legacy Builder Program</h3>
+                                <h3>Legacy Builders Program</h3>
                                 <h1>$900 USD</h1>
                                 <h4>Get full resell to $100, $300, $600 and $900</h4>
                                 <p>
@@ -468,7 +573,7 @@ const LandingPage = () => {
                     <a href="https://www.tiktok.com/@zee.digital.hub" target="_blank" rel="noopener noreferrer">
                         <FaTiktok size="2em" className="social-icon" />
                     </a>
-                    <a href="https://wa.me/your-number" target="_blank" rel="noopener noreferrer">
+                    <a href="https://wa.me/0633362141" target="_blank" rel="noopener noreferrer">
                         <FaWhatsapp size="2em" className="social-icon" />
                     </a>
                     <a href="https://www.youtube.com/@ZeeDigitalHub-h2m" target="_blank" rel="noopener noreferrer">
